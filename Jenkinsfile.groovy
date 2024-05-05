@@ -56,12 +56,14 @@ pipeline {
     
     post {
         success {
-            echo 'Pipeline Success'
-            // Send email notification
+            mail to: "nirmalantony2000@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was successfull!"
         }
         failure {
-            echo 'Pipeline Failure'
-            // Send email notification
+            mail to: "nirmalantony2000@gmail.com",
+                subject: "Build Status Email",
+                body: "Build was Failure!"
         }
     }
 }
